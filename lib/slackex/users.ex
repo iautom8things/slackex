@@ -46,4 +46,9 @@ defmodule Slackex.Users do
     params = options |> Map.merge(%{presence: presence})
     Slackex.request("users.setPresence", params)
   end
+
+  def set_profile(profile, options \\ %{}) do
+    params = options |> Map.merge(%{profile: profile})
+    Slackex.request("users.profile.set", params)
+  end
 end
